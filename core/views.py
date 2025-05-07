@@ -1,5 +1,7 @@
 from django.shortcuts import render,redirect
 from .forms import ContactForm
+from .models import Service, BlogPost
+
 
 def home(request):
     return render(request, 'home.html')
@@ -29,3 +31,12 @@ def apply_job(request):
     else:
         form = JobApplicationForm()
     return render(request, 'apply_job.html', {'form': form})
+    
+def services(request):
+    all_services = Service.objects.all()
+    return render(request, 'services.html', {'services': all_services})
+
+
+def blog(request):
+    posts = BlogPost.objects.all().order_by('-created_at')
+    return render(request, 'blog.html', {'posts': posts})
