@@ -4,11 +4,9 @@
   <meta charset="UTF-8">
   <title>{% block title %}Call Centre{% endblock %}</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
-
-  <!-- Bootstrap CSS CDN -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 
-  <!-- Simple Animation CSS -->
   <style>
     .fade-in {
       opacity: 0;
@@ -21,20 +19,48 @@
         transform: none;
       }
     }
+    footer {
+      margin-top: 80px;
+      padding: 20px 0;
+      background: #f8f9fa;
+      text-align: center;
+    }
   </style>
 </head>
 <body>
+
+  <!-- NAVBAR -->
   <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
     <div class="container">
-      <a class="navbar-brand" href="#">📞 Call Centre</a>
+      <a class="navbar-brand" href="/">📞 Call Centre</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item"><a class="nav-link" href="{% url 'home' %}">Home</a></li>
+          <li class="nav-item"><a class="nav-link" href="{% url 'about' %}">About</a></li>
+          <li class="nav-item"><a class="nav-link" href="{% url 'services' %}">Services</a></li>
+          <li class="nav-item"><a class="nav-link" href="{% url 'blog' %}">Blog</a></li>
+          <li class="nav-item"><a class="nav-link" href="{% url 'contact' %}">Contact</a></li>
+          <li class="nav-item"><a class="nav-link btn btn-success btn-sm text-white ms-2" href="{% url 'apply_job' %}">Apply Now</a></li>
+        </ul>
+      </div>
     </div>
   </nav>
 
+  <!-- MAIN CONTENT -->
   <div class="container mt-5">
     {% block content %}{% endblock %}
   </div>
 
-  <!-- Bootstrap JS -->
+  <!-- FOOTER -->
+  <footer>
+    <div class="container">
+      <p>&copy; 2025 Call Centre Services | Built with ❤️ by Shahed</p>
+    </div>
+  </footer>
+
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
