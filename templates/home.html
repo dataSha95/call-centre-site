@@ -1,10 +1,67 @@
 {% extends 'base.html' %}
-
-{% block title %}Home - Call Centre{% endblock %}
+{% block title %}Welcome | Call Centre{% endblock %}
 
 {% block content %}
-  <div class="text-center fade-in">
-    <h1 class="display-4">Welcome to Our Call Centre</h1>
-    <p class="lead">We provide Inbound, Outbound, Customer Support & Virtual Receptionist Services.</p>
+<!-- HERO SECTION -->
+<div class="text-center bg-light p-5 rounded-3 fade-in">
+  <h1 class="display-4">Transform Your Customer Experience</h1>
+  <p class="lead">Inbound | Outbound | Virtual Receptionist | 24/7 Customer Support</p>
+  <a href="{% url 'apply_job' %}" class="btn btn-primary btn-lg mt-3">Hire Our Team</a>
+</div>
+
+<!-- SERVICES OVERVIEW -->
+<div class="mt-5 text-center">
+  <h2>Our Core Services</h2>
+  <div class="row mt-4">
+    <div class="col-md-3">
+      <i class="fas fa-phone fa-2x mb-2 text-primary"></i>
+      <h5>Inbound Calls</h5>
+      <p>Handle customer inquiries quickly and professionally.</p>
+    </div>
+    <div class="col-md-3">
+      <i class="fas fa-headset fa-2x mb-2 text-success"></i>
+      <h5>Outbound Support</h5>
+      <p>Reach out to leads and customers for follow-up or sales.</p>
+    </div>
+    <div class="col-md-3">
+      <i class="fas fa-clock fa-2x mb-2 text-warning"></i>
+      <h5>24/7 Availability</h5>
+      <p>Always-on support, no matter the time zone.</p>
+    </div>
+    <div class="col-md-3">
+      <i class="fas fa-user-tie fa-2x mb-2 text-danger"></i>
+      <h5>Virtual Receptionist</h5>
+      <p>Professional answering and scheduling services for your business.</p>
+    </div>
   </div>
+</div>
+
+<!-- WHY US -->
+<div class="mt-5 p-4 bg-light rounded">
+  <h2 class="text-center">Why Choose Us?</h2>
+  <div class="row mt-4">
+    <div class="col-md-4 text-center">
+      <i class="fas fa-thumbs-up fa-2x text-info mb-2"></i>
+      <h5>Reliable & Secure</h5>
+      <p>We ensure every conversation is handled with privacy and care.</p>
+    </div>
+    <div class="col-md-4 text-center">
+      <i class="fas fa-users fa-2x t-success mb-2"></i>
+      <h5>Experienced Agents</h5>
+      <p>Skilled professionals with multilingual and multi-industry expertise.</p>
+    </div>
+    <div class="col-md-4 text-center">
+      <i class="fas fa-chart-line fa-2x text-warning mb-2"></i>
+      <h5>Result-Driven</h5>
+      <p>We help your business grow with every call we make or receive.</p>
+    </div>
+  </div>
+</div>
+
+<!-- CTA BANNER -->
+<div class="mt-5 bg-dark text-white text-center p-4 rounded">
+  <h3>Ready to Elevate Your Customer Service?</h3>
+  <p>Join hands with our expert call centre team today.</p>
+  <a href="{% url 'contact' %}" class="btn btn-outline-light mt-2">Contact Us</a>
+</div>
 {% endblock %}
