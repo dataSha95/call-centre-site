@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+{% block title %}Job Application{% endblock %}
+{% block content %}
+  <div class="col-md-6 offset-md-3 fade-in">
+    <h2>Apply for a Position</h2>
+    <form method="POST" enctype="multipart/form-data">
+      {% csrf_token %}
+      {{ form.as_p }}
+      <button type="submit" class="btn btn-success">Submit Application</button>
+    </form>
+  </div>
+{% endblock %}

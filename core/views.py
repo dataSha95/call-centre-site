@@ -17,3 +17,15 @@ def contact(request):
     
 def about(request):
     return render(request, 'about.html')
+
+from .forms import JobApplicationForm
+
+def apply_job(request):
+    if request.method == 'POST':
+        form = JobApplicationForm(request.POST, request.FILES)
+        if form.is_valid():
+            form.save()
+            return render(request, 'thankyou.html')
+    else:
+        form = JobApplicationForm()
+    return render(request, 'apply_job.html', {'form': form})
